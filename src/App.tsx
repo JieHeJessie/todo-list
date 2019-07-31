@@ -26,7 +26,7 @@ const App = (props: any) => {
   };
 
   const completeTodo = (index: number): void => {
-    const newTodos: ITodo[] = todos;
+    const newTodos: ITodo[] = [...todos];
     newTodos[index].complete = !newTodos[index].complete;
     setTodos(newTodos);
   };
