@@ -22,13 +22,10 @@ const App = (props: any) => {
   };
 
   const removeTodo = (index: number): void => {
-    const newTodos: ITodo[] = todos;
-    newTodos.splice(index, 1);
-    setTodos(newTodos);
+    setTodos(todos.filter((item, i) => i !== index));
   };
 
   const completeTodo = (index: number): void => {
-    console.log("index:", index);
     const newTodos: ITodo[] = todos;
     newTodos[index].complete = !newTodos[index].complete;
     setTodos(newTodos);
